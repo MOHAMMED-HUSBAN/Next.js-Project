@@ -1,4 +1,3 @@
-
 // pages/products/index.js (SSR)
 import { useEffect, useState } from 'react';
 import Layout from '../../components/Layout';
@@ -18,8 +17,13 @@ export default function Products({ initialProducts }) {
 
   return (
     <Layout>
-      <h1>Our Products</h1>
-      <div className="product-grid">
+      <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>Our Products</h1>
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+        gap: '20px',
+        padding: '20px'
+      }}>
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
